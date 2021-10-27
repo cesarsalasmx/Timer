@@ -1,4 +1,4 @@
-//const db = require('');
+const { getUser } = require('../../services/user');
 const {
     GraphQLID
 } = require('graphql');
@@ -7,7 +7,7 @@ const GetUser = {
     type: QueryUser,
     args: { id: { type: GraphQLID }},
     resolve(parentValue,args){
-        return 0;
+        return getUser(args);
     },
 };
 module.exports = GetUser;
